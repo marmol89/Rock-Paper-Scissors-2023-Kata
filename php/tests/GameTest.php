@@ -67,13 +67,26 @@ class GameTest extends TestCase
         self::assertSame('player1', $result);
     }
 
-    /** @test */
-    public function player1_scissors_wins_when_player2_scissors(): void
+    /** @test 
+     *  @dataProvider drawProvider
+    */
+
+    public function player1_scissors_draw_when_player2_scissors(string $move): void
     {
         $game = new Game();
 
-        $result = $game->play('scissors', 'scissors');
+        $result = $game->play($move, $move);
 
+        
         self::assertSame('draw', $result);
+    }
+
+    public function drawProvider(): array
+    {
+        return [
+            'drawRock' => ['rock'],
+            'drawScissors' => ['scissors'],
+            'drawPaper' => ['paper'],
+        ];
     }
 }
