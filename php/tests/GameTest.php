@@ -27,7 +27,6 @@ class GameTest extends TestCase
         self::assertSame('player2', $result);
     }
 
-
     /** @test */
     public function player1_paper_wins_when_player2_rock(): void
     {
@@ -38,4 +37,23 @@ class GameTest extends TestCase
         self::assertSame('player1', $result);
     }
     
+    /** @test */
+    public function player2_paper_wins_when_player1_rock(): void
+    {
+        $game = new Game();
+
+        $result = $game->play('rock', 'paper');
+
+        self::assertSame('player2', $result);
+    }
+
+    /** @test */
+    public function player1_paper_wins_when_player2_scissors(): void
+    {
+        $game = new Game();
+
+        $result = $game->play('paper', 'scissors');
+
+        self::assertSame('player2', $result);
+    }
 }
