@@ -12,6 +12,10 @@ class Game
 
     public function play(string $player1, string $player2): string
     {
+        if ($player1 === $player2) {
+            return 'draw';
+        }
+        
         if ($player1 === 'paper' && $player2 === 'rock') {
             return 'player1';
         }
@@ -23,7 +27,6 @@ class Game
         if ($player1 === 'scissors' && $player2 === 'paper') {
             return 'player1';
         }
-
 
         return 'player2';
     }

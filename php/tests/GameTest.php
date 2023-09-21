@@ -57,13 +57,23 @@ class GameTest extends TestCase
         self::assertSame('player2', $result);
     }
 
-        /** @test */
-        public function player1_scissors_wins_when_player2_paper(): void
-        {
-            $game = new Game();
-    
-            $result = $game->play('scissors', 'paper');
-    
-            self::assertSame('player1', $result);
-        }
+    /** @test */
+    public function player1_scissors_wins_when_player2_paper(): void
+    {
+        $game = new Game();
+
+        $result = $game->play('scissors', 'paper');
+
+        self::assertSame('player1', $result);
+    }
+
+    /** @test */
+    public function player1_scissors_wins_when_player2_scissors(): void
+    {
+        $game = new Game();
+
+        $result = $game->play('scissors', 'scissors');
+
+        self::assertSame('draw', $result);
+    }
 }
