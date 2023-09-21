@@ -4,8 +4,10 @@ namespace Kata;
 
 class Game
 {
-    public function play(): string
+    public function play(string $player1, string $player2): string
     {
+        if($player2 === 'rock') return 'player2';
+        
         return 'player1';
     }
 }

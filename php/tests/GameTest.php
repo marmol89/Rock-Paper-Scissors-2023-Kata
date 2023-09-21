@@ -8,12 +8,22 @@ use PHPUnit\Framework\TestCase;
 class GameTest extends TestCase
 {
     /** @test */
-    public function player1_rock_win_player2_when_scissor(): void
+    public function player1_rock_win_when_player2_scissor(): void
     {
         $game = new Game();
 
-        $result = $game->play();
+        $result = $game->play('rock', 'scissors');
 
         self::assertSame('player1', $result);
+    }
+
+    /** @test */
+    public function player2_rock_win_when_player1_scissor(): void
+    {
+        $game = new Game();
+
+        $result = $game->play('scissors', 'rock');
+
+        self::assertSame('player2', $result);
     }
 }
