@@ -81,12 +81,10 @@ class GameTest extends TestCase
         self::assertSame('draw', $result);
     }
 
-    public function drawProvider(): array
+    public function drawProvider(): iterable
     {
-        return [
-            'drawRock' => ['rock'],
-            'drawScissors' => ['scissors'],
-            'drawPaper' => ['paper'],
-        ];
+        yield 'drawRock' => ['rock'];
+        yield 'drawScissors' => ['scissors'];
+        yield 'drawPaper' => ['paper'];   
     }
 }
