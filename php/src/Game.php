@@ -4,27 +4,20 @@ namespace Kata;
 
 class Game
 {
-    // private const HANDS = [
-    //     'paper' => 'rock',
-    //     'rock' => 'scissors',
-    //     'scissors' => 'paper'
-    // ];
+    private const HANDS = [
+        'paper' => 'rock',
+        'rock' => 'scissors',
+        'scissors' => 'paper'
+    ];
 
     public function play(string $player1, string $player2): string
     {
+
         if ($player1 === $player2) {
             return 'draw';
         }
-        
-        if ($player1 === 'paper' && $player2 === 'rock') {
-            return 'player1';
-        }
 
-        if ($player1 === 'rock' && $player2 === 'scissors') {
-            return 'player1';
-        }
-
-        if ($player1 === 'scissors' && $player2 === 'paper') {
+        if(self::HANDS[$player1] === $player2){
             return 'player1';
         }
 
