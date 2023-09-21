@@ -12,21 +12,19 @@ class Game
 
     public function play(string $player1, string $player2): string
     {
-        if ($player1 === 'paper' && $player2 === 'scissors') {
-            return 'player2';
-        }
-
-        if ($player1 === 'paper') {
+        if ($player1 === 'paper' && $player2 === 'rock') {
             return 'player1';
         }
-        
-        if ($player2 === 'paper') {
-            return 'player2';
-        }
-        if ($player2 === 'rock') {
-            return 'player2';
+
+        if ($player1 === 'rock' && $player2 === 'scissors') {
+            return 'player1';
         }
 
-        return 'player1';
+        if ($player1 === 'scissors' && $player2 === 'paper') {
+            return 'player1';
+        }
+
+
+        return 'player2';
     }
 }
